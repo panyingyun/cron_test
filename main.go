@@ -25,6 +25,10 @@ func (d *day) Run() {
 //every 5 second run a job
 var spec5s = "0-59/5 * * * * *"
 
+//var spec5s = "@every 10s"
+//var spec5s = "@every @every 1h30m"
+//var spec5s = "@every @every 1m"
+
 //every day(00:00:00) run a job
 var specday = "0 0 0 1-31 * *"
 

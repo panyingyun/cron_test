@@ -184,6 +184,7 @@ func (c *Cron) run() {
 		select {
 		case now = <-timer.C:
 			now = now.In(c.location)
+			// fix bug like this : now = now.In(c.location).Round(time.Second)
 			// Run every entry whose next time was this effective time.
 			for _, e := range c.entries {
 				if e.Next != effective {
